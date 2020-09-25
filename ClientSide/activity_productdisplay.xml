@@ -2,10 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/sendinginterface"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:onClick="viewcart"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -22,9 +21,10 @@
         android:id="@+id/productname"
         android:layout_width="252dp"
         android:layout_height="55dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="64dp"
+        android:background="#00FFFFFF"
         android:fontFamily="sans-serif-thin"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,13 +32,13 @@
 
     <TextView
         android:id="@+id/Cost"
-        android:layout_width="61dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
+        android:layout_width="120dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#00D68F8F"
         android:fontFamily="sans-serif-thin"
-        android:text="TextView"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,55 +48,97 @@
         android:layout_width="367dp"
         android:layout_height="55dp"
         android:layout_marginTop="32dp"
+        android:background="#00D68F8F"
         android:fontFamily="sans-serif-thin"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productname" />
 
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="367dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="52dp"
+        android:background="#00D68F8F"
+        android:fontFamily="sans-serif-thin"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stock" />
+
     <Button
-        android:id="@+id/button"
-        android:layout_width="145dp"
-        android:layout_height="48dp"
+        android:id="@+id/addtocart"
+        android:layout_width="113dp"
+        android:layout_height="44dp"
         android:layout_marginTop="64dp"
+        android:background="@drawable/button_shape"
         android:fontFamily="sans-serif-thin"
         android:text="Add to cart"
-        android:textSize="14sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumberDecimal" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/viewCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
         android:fontFamily="sans-serif-thin"
         android:onClick="viewcart"
+        android:background="@drawable/button_shape"
         android:text="View Cart"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/addtocart" />
 
     <EditText
         android:id="@+id/editTextNumberDecimal"
-        android:layout_width="367dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="44dp"
+        android:layout_width="66dp"
+        android:layout_height="52dp"
+        android:background="@drawable/button_shape"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/quantity" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="367dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="60dp"
+        android:id="@+id/textView6"
+        android:layout_width="101dp"
+        android:layout_height="52dp"
+        android:fontFamily="sans-serif-thin"
+        android:text="Choose Quantity"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintTop_toTopOf="@+id/editTextNumberDecimal"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="73dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:fontFamily="sans-serif-thin"
+        android:onClick="checkParams"
+        android:text="Total"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/addtocart"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stock" />
+        app:layout_constraintTop_toTopOf="@+id/addtocart"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
