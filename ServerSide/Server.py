@@ -1,6 +1,7 @@
 import socket
 import UserDatabase
 import ProductDatabase
+import NLP
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -9,8 +10,7 @@ port = 8000
 server.bind((ip, port))
 server.listen(10)
 client, addr = server.accept()
-
-while True:
+if True:
     print("Connection Established")
     signal = client.recv(1024)
     signal = signal.decode(encoding='utf-8', errors='ignore')
@@ -26,9 +26,11 @@ while True:
         client.send(str(result).encode(encoding='utf-8', errors='ignore'))
     elif signal[0] == 'se':
         i = ProductDatabase.search_category(int(signal[1]), signal[2])
-        client.send((str(i.catagory) + str(i.name) + " " + str(i.stock) + " " + str(i.cost)).encode(encoding='utf-8', errors='ignore'))
-        print("sent")
+        client.send(bytes((str(i.name) + " " + str(i.stock) + " " + str(i.cost)).encode(encoding='utf-8', errors='ignore')))
+    elif signal[0] == 'gr':
+        result = NLP.model(NLP.userinput(signal[1]))
+        client.send(str(result).encode(encoding='utf-8', errors='ignore'))
     else:
         result = "-1"
         client.send(str(result).encode(encoding='utf-8', errors='ignore'))
-    server.close()
+server.close()
