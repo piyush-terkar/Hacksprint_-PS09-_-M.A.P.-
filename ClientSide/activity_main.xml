@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -33,6 +34,7 @@
         android:layout_marginRight="16dp"
         android:fontFamily="sans-serif-thin"
         android:onClick="fruits"
+        android:background="@drawable/button_shape"
         android:text="Delicious Fruits"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/Category2"
@@ -51,6 +53,7 @@
         android:layout_marginRight="16dp"
         android:fontFamily="sans-serif-thin"
         android:onClick="vegetables"
+        android:background="@drawable/button_shape"
         android:text="Healthy Veggies"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/Category3"
@@ -69,6 +72,7 @@
         android:layout_marginRight="16dp"
         android:fontFamily="sans-serif-thin"
         android:onClick="cereals"
+        android:background="@drawable/button_shape"
         android:text="Nutritious Cereals"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/Category4"
@@ -87,6 +91,7 @@
         android:layout_marginRight="16dp"
         android:fontFamily="sans-serif-thin"
         android:onClick="cleaning"
+        android:background="@drawable/button_shape"
         android:text="Cleaning Products"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/Category5"
@@ -105,6 +110,7 @@
         android:layout_marginRight="16dp"
         android:fontFamily="sans-serif-thin"
         android:onClick="diary"
+        android:background="@drawable/button_shape"
         android:text="Protienitious Dairy"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
