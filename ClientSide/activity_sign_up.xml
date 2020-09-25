@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/image"
     android:onClick="signin"
     tools:context=".SignUpActivity">
 
@@ -30,6 +31,7 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="388dp"
         android:layout_height="47dp"
+        android:background="@drawable/button_shape"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
         android:inputType="textPersonName"
@@ -65,6 +67,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:background="@drawable/button_shape"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
         android:inputType="textPersonName"
@@ -99,6 +102,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:background="@drawable/button_shape"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
@@ -132,6 +136,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
+        android:background="@drawable/button_shape"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
@@ -164,10 +169,12 @@
         android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-medium"
         android:onClick="signin"
+        android:background="@drawable/button_shape"
         android:text="Sign In"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        tools:layout_editor_absoluteX="161dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/sendinginterface"
