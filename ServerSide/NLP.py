@@ -61,3 +61,4 @@ for i in range(0, len(df['Review'])):
     review = [wl.lemmatize(word) for word in review if word not in set(all_stopwords)]
     review = ' '.join(review)
     vocabularyOfModel.append(review)
+

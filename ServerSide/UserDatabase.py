@@ -28,12 +28,12 @@ def login(name, passwd):
     if len(database) != 0:
         for i in database:
             if i.name == name and i.passwd == passwd:
-                result = 0
+                result = "0"
                 return result
             elif i.name == name:
-                result = 1
+                result = "1"
                 return result
     else:
         print("User not found, please create a new account")
-        result = '-1'
+        result = None
         return result
