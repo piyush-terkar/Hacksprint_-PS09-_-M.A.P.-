@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".ProductDisplay">
 
     <TextView
         android:id="@+id/textView"
@@ -20,7 +20,7 @@
     <TextView
         android:id="@+id/productname"
         android:layout_width="252dp"
-        android:layout_height="55dp"
+        android:layout_height="76dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="64dp"
@@ -33,7 +33,7 @@
     <TextView
         android:id="@+id/Cost"
         android:layout_width="120dp"
-        android:layout_height="58dp"
+        android:layout_height="76dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
@@ -46,7 +46,7 @@
     <TextView
         android:id="@+id/stock"
         android:layout_width="367dp"
-        android:layout_height="55dp"
+        android:layout_height="76dp"
         android:layout_marginTop="32dp"
         android:background="#00D68F8F"
         android:fontFamily="sans-serif-thin"
@@ -75,6 +75,7 @@
         android:layout_marginTop="64dp"
         android:background="@drawable/button_shape"
         android:fontFamily="sans-serif-thin"
+        android:onClick="addtoCart"
         android:text="Add to cart"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textSize="18sp"
@@ -89,23 +90,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="72dp"
+        android:background="@drawable/button_shape"
         android:fontFamily="sans-serif-thin"
         android:onClick="viewcart"
-        android:background="@drawable/button_shape"
         android:text="View Cart"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.479"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addtocart" />
+        app:layout_constraintTop_toBottomOf="@+id/addtocart"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/editTextNumberDecimal"
         android:layout_width="66dp"
         android:layout_height="52dp"
-        android:background="@drawable/button_shape"
         android:layout_marginTop="56dp"
         android:layout_marginEnd="68dp"
         android:layout_marginRight="68dp"
+        android:background="@drawable/button_shape"
         android:ems="10"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,32 +117,36 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="101dp"
-        android:layout_height="52dp"
+        android:layout_width="185dp"
+        android:layout_height="32dp"
         android:fontFamily="sans-serif-thin"
         android:text="Choose Quantity"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/editTextNumberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/editTextNumberDecimal"
         app:layout_constraintTop_toTopOf="@+id/editTextNumberDecimal"
-        app:layout_constraintVertical_bias="0.0"
-        tools:layout_editor_absoluteX="73dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="113dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="81dp"
+        android:layout_marginLeft="81dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginRight="68dp"
         android:background="@drawable/button_shape"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp"
         android:fontFamily="sans-serif-thin"
         android:onClick="checkParams"
         android:text="Total"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/addtocart"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addtocart"
         app:layout_constraintTop_toTopOf="@+id/addtocart"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
