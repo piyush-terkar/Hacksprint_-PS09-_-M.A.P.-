@@ -2,11 +2,13 @@ package com.example.mapeat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ProductDisplay extends AppCompatActivity {
     protected static String Searchresult = "com.example.mapeat.ACTIVITYCODE";
@@ -43,19 +45,21 @@ public class ProductDisplay extends AppCompatActivity {
         TextView stock = (TextView)findViewById(R.id.quantity);
         TextView cost = (TextView)findViewById(R.id.Cost);
         EditText quantity = (EditText)findViewById(R.id.editTextNumberDecimal);
-        while(true){
             if(!quantity.getText().equals("")){
                 int quan = Integer.valueOf(quantity.getText().toString());
                 double price = Double.valueOf(cost.getText().toString());
                 cost.append(String.valueOf(mul(quan, price)));
             }
-        }
+
     }
 
+    @SuppressLint("WrongConstant")
     public void addtoCart(View view){
         Intent intent = new Intent(this, CheckOutActivity.class);
         Intent previntent = getIntent();
         String result = previntent.getStringExtra(SearchActivity.Searchresult);
         intent.putExtra(Searchresult, result);
+        Toast.makeText(this,"Product added to Successfully!", 1000);
+        startActivity(intent);
     }
 }

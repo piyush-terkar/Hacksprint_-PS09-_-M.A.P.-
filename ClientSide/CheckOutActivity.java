@@ -2,11 +2,13 @@ package com.example.mapeat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
 
@@ -16,11 +18,6 @@ public class CheckOutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.check_out);
-        Intent intent = getIntent();
-        String re = intent.getStringExtra(ProductDisplay.Searchresult);
-        String[] brokenre = breakstring(re);
-        TextView order = (TextView)findViewById(R.id.Order);
-        order.setText(brokenre[0] + "Cost" + brokenre[2]);
     }
 
     public String[] breakstring(String receive)
@@ -29,7 +26,9 @@ public class CheckOutActivity extends AppCompatActivity {
         return info;
     }
 
+    @SuppressLint("WrongConstant")
     public void checkout(View view) {
+        Toast.makeText(this,"Your order has been placed Successfully!", 1000);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
@@ -38,9 +37,9 @@ public class CheckOutActivity extends AppCompatActivity {
         EditText giveReview = (EditText)findViewById(R.id.GiveReview);
         Communication communication = new Communication();
         try {
-            String re = communication.execute(giveReview.getText().toString()).get();
+            String re = communication.execute("gr," + giveReview.getText().toString()).get();
             TextView output = (TextView)findViewById(R.id.Title);
-            if(re == "1"){
+            if(re.equals("[1]")){
                 output.setText("Thank You for such a positive Review");
             }
             else{

@@ -24,6 +24,7 @@ public class SearchActivity extends AppCompatActivity {
         Intent intent = new Intent(this,ProductDisplay.class);
         intent.putExtra(Searchresult, result.getText());
         startActivity(intent);
+        SearchActivity.this.finish();
     }
     public void search(View view) {
         Intent intent = getIntent();

@@ -2,12 +2,14 @@ package com.example.mapeat;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.concurrent.ExecutionException;
 
@@ -44,17 +46,19 @@ public class LoginActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+    @SuppressLint("WrongConstant")
     public void check(String check)
     {
         Intent intent = new Intent(this,MainActivity.class);
         switch(check)
         {
-            case "0":
+            case "None":
                 SharedPreferences loggedin = getSharedPreferences(LoginActivity.LOGGED_IN , 0);
                 SharedPreferences.Editor obj = loggedin.edit();
                 obj.putBoolean("isloggedin", true);
                 obj.commit();
-                //startActivity(intent);
+                startActivity(intent);
+                Toast.makeText(this,"Signed up and logged in Successfully!", 1000);
                 LoginActivity.this.finish();
                 break;
 
